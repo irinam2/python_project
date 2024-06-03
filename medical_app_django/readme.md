@@ -3,9 +3,7 @@
 Создайте виртуальное окружение (conda create --name conda_venv python=3.8).  
 Активируйте виртуальное окружение (conda activate conda_venv).   
 Установите необходимые библиотеки: pip install  -r requirements.txt   
-Выполнить миграции:  
+Выполнить:  
     python manage.py makemigrations services  
-    python manage.py migrate services  
-    python manage.py makemigrations services  
-    python manage.py migrate services  
+    python manage.py migrate services
 Запустите проект python manage.py runserver  
