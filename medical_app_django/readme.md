@@ -6,6 +6,6 @@
 Выполнить:  
     python manage.py makemigrations services  
     python manage.py migrate services  
-    python manage.py makemigrations services  
-    python manage.py migrate services  
+    python manage.py makemigrations 
+    python manage.py migrate 
 Запустите проект python manage.py runserver
