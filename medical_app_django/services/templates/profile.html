@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль - Медицинские услуги{% endblock %}
+
+{% block content %}
+    <h1>Профиль пользователя</h1>
+    <p>Имя: {{ user.username }}</p>
+    <h2>Избранное</h2>
+    <ul>
+        {% for service in favorite_services %}
+            <li>
+                <a href="/service/{{ service.id }}/">{{ service.service.link }}</a> - {{ service.service.clinic }}
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>История поиска</h2>
+    <ul>
+        {% for search in search_history %}
+            <li>{{ search.query }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

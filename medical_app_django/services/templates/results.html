@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Результаты поиска</h1>
+    <ul>
+        {% for service in services %}
+            <li>
+                <h2>{{ service.name }}</h2>
+                <p>{{ service.description }}</p>
+                <a href="{% url 'service_details' service.id %}">Подробнее</a>
+                {% if user.is_authenticated %}
+                    {% if service.id in user.favorites.all %}
+                        <a href="{% url 'remove_from_favorite' service.id %}" class="btn btn-danger">Удалить из избранного</a>
+                    {% else %}
+                        <a href="{% url 'add_to_favorite' service.id %}" class="btn btn-success">Добавить в избранное</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-warning">Авторизоваться, чтобы добавить в избранное</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

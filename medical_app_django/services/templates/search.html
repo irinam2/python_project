@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Поиск услуг - Медицинские услуги{% endblock %}
+
+{% block content %}
+    <h1>Поиск медицинских услуг</h1>
+    <form method="POST" action="/search">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="query">Введите название услуги:</label>
+            <input type="text" class="form-control" id="query" name="query" placeholder="Например: УЗИ, стоматология">
+        </div>
+        <button type="submit" class="btn btn-primary">Найти</button>
+    </form>
+{% endblock %}

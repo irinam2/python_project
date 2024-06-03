@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Описание услуги - Медицинские услуги{% endblock %}
+
+{% block content %}
+    <h1>{{ service.name }}</h1>
+    <p>Клиника: {{ service.clinic }}</p>
+    <a href="{{ service.link }}" class="btn btn-primary">Подробнее</a>
+{% endblock %}
